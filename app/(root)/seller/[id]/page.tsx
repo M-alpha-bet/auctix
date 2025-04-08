@@ -5,6 +5,7 @@ import { client } from "@/sanity/lib/client";
 import { SELLER_PAGE_BY_ID_QUERY } from "@/sanity/lib/queries";
 import Image from "next/image";
 import React, { Suspense } from "react";
+import type { Metadata, ResolvingMetadata } from "next";
 
 export default async function SellersPage({
   params,
@@ -56,4 +57,21 @@ export default async function SellersPage({
       </section>
     </>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ _id: string }>;
+}): Promise<Metadata> {
+  const id = (await params)._id;
+
+  const user = await client.fetch(SELLER_PAGE_BY_ID_QUERY, {
+    id: id,
+  });
+
+  return {
+    title: user.name,
+    description: user.bio,
+  };
 }

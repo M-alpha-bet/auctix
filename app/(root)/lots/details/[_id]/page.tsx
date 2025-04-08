@@ -8,6 +8,7 @@ import { LOT_BY_ID_QUERY, PLAYLIST_BY_SLUG_QUERY } from "@/sanity/lib/queries";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { notFound } from "next/navigation";
 import React from "react";
+import type { Metadata, ResolvingMetadata } from "next";
 
 export const experimental_ppr = true;
 
@@ -179,4 +180,19 @@ export default async function page({
       )}
     </>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ _id: string }>;
+}): Promise<Metadata> {
+  const id = (await params)._id;
+
+  const lot = await client.fetch(LOT_BY_ID_QUERY, { _id: id });
+
+  return {
+    title: lot.lotName,
+    description: lot.description,
+  };
 }
