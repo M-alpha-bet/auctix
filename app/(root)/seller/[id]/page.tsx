@@ -13,10 +13,12 @@ export default async function SellersPage({
   params: Promise<{ id: string }>;
 }) {
   const id = (await params).id;
+  console.log(id);
+
   const session = await auth();
 
   const user = await client.fetch(SELLER_PAGE_BY_ID_QUERY, {
-    id: id,
+    id: id as string,
   });
 
   if (!user) return;
@@ -62,9 +64,9 @@ export default async function SellersPage({
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ _id: string }>;
+  params: Promise<{ id: string }>;
 }): Promise<Metadata> {
-  const id = (await params)._id;
+  const id = (await params).id;
 
   const user = await client.fetch(SELLER_PAGE_BY_ID_QUERY, {
     id: id,
