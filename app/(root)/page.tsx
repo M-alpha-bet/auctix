@@ -18,7 +18,7 @@ export default async function Home({
       <section className="pink_container pattern min-h-[530px]">
         <AnimatedText
           text="Welcome to AUCTIX"
-          className="dark_bg_container heading text-4xl md:text-5xl font-bold mb-4"
+          className="dark_bg_container heading text-[40px] md:text-5xl font-bold mb-4"
         />
 
         <AnimatedText
