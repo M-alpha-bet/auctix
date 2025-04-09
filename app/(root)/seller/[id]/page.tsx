@@ -27,7 +27,7 @@ export default async function SellersPage({
       <section className="profile_container">
         <div className="profile_card">
           <div className="profile_title">
-            <h1 className="line-clamp-1 text-center font-bold text-2xl uppercase">
+            <h1 className="line-clamp-1 text-center text-black font-bold text-2xl uppercase">
               {user?.name}
             </h1>
           </div>
