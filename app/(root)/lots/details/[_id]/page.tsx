@@ -1,6 +1,5 @@
 import AuctixCard, { LotTypeCard } from "@/components/AuctixCard";
 import BidForLotButton from "@/components/BidForLotButton";
-import AnimatedText from "@/components/ui/animated-text";
 import { formatDate, formatNumber } from "@/lib/utils";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
@@ -8,7 +7,8 @@ import { LOT_BY_ID_QUERY, PLAYLIST_BY_SLUG_QUERY } from "@/sanity/lib/queries";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { notFound } from "next/navigation";
 import React from "react";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
+import SplitTextEntrance from "@/components/ui/SplitText";
 
 export const experimental_ppr = true;
 
@@ -34,8 +34,7 @@ export default async function page({
         <div className="tag">
           <h2 className="tag_tri">{formatDate(lot.bidEndTime as string)}</h2>
         </div>
-
-        <AnimatedText
+        <SplitTextEntrance
           text={lot.lotName}
           className="dark_bg_container heading"
         />

@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
 import LotForm from "@/components/lotForm";
-import AnimatedText from "@/components/ui/animated-text";
+import SplitTextEntrance from "@/components/ui/SplitText";
 import { redirect } from "next/navigation";
 
 export default async function page() {
@@ -11,7 +11,7 @@ export default async function page() {
   return (
     <>
       <section className="pink_container pattern min-h-[230px]">
-        <AnimatedText
+        <SplitTextEntrance
           text="SUBMIT YOUR LOT"
           className="dark_bg_container heading"
         />

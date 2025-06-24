@@ -1,5 +1,4 @@
 import { auth } from "@/auth";
-import AnimatedText from "@/components/ui/animated-text";
 import UserLots from "@/components/UserLots";
 import { client } from "@/sanity/lib/client";
 import { SELLER_PAGE_BY_ID_QUERY } from "@/sanity/lib/queries";
@@ -39,7 +38,7 @@ export default async function SellersPage({
             className="profile_image"
           />
           <div className="text-[20px] text-center text-[#fffaf5] mt-5">
-            <AnimatedText text={`@${user.username}`} />
+            <p>{`@${user.username}`}</p>
           </div>
           <p className="text-[15px] text-center text-[#fffaf5] mt-1">
             {user.bio}

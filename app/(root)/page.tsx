@@ -2,7 +2,7 @@ import SearchForm from "@/components/SearchForm";
 import AuctixCard, { LotTypeCard } from "@/components/AuctixCard";
 import { LOTS_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
-import AnimatedText from "@/components/ui/animated-text";
+import SplitTextEntrance from "@/components/ui/SplitText";
 
 export default async function Home({
   searchParams,
@@ -16,15 +16,17 @@ export default async function Home({
   return (
     <>
       <section className="pink_container pattern min-h-[530px]">
-        <AnimatedText
+        <SplitTextEntrance
           text="Welcome to AUCTIX"
-          className="dark_bg_container heading !text-[42px] md:text-5xl font-bold mb-4"
+          className="dark_bg_container splitted text heading !text-[42px] md:text-5xl font-bold mb-4"
+        />
+        <SplitTextEntrance
+          text="Experience thrilling, time-based auctions. Whether you’re clearing out
+          rare collectibles, selling high-demand gadgets, or bidding on hidden
+          gems. Auctix makes the experience fast, fair, and fun."
+          className="sub_heading splitted text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
         />
 
-        <AnimatedText
-          text={`Experience thrilling, time-based auctions. Whether you’re clearing out rare collectibles, selling high-demand gadgets, or bidding on hidden gems. Auctix makes the experience fast, fair, and fun.`}
-          className="sub_heading text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
-        />
         <SearchForm query={query} />
       </section>
 
