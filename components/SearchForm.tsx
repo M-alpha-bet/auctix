@@ -15,7 +15,7 @@ const SearchForm = ({ query }: { query?: string }) => {
         name="query"
         defaultValue=""
         className="outline-none font-medium text-gray-800"
-        placeholder="Search startups"
+        placeholder="Search auctions"
       />
       <div className="gap-2 flex items-center">
         {query && <SearchReset />}

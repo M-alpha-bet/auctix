@@ -32,7 +32,7 @@ export default async function Home({
 
       <section className="px-5 md:px-20">
         <p className="text_p_heading mt-8">
-          {query ? `Search results for "${query}"` : "All startups"}
+          {query ? `Search results for "${query}"` : "All auctions"}
         </p>
         <ul className="auctix_card_container mt-5">
           {lots?.length > 0
